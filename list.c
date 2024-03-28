@@ -93,12 +93,15 @@ void * popBack(List * list) {
 
 void * popCurrent(List * list) {
   int* dato = list->current->data;
+  
   if (list->current == list->head) {
     list->head = list->head->next;
+    list->head->prev = NULL;
     free(list->head->prev);
   }
   else if (list->current == list->tail) {
     list->tail = list->tail->prev;
+    list->tail->next = NULL;
     free(list->tail->next);
   }
   else {
