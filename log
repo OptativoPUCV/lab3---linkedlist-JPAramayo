@@ -80,3 +80,21 @@ Thu 28 Mar 2024 03:01:14 PM UTC:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 a54688b
+Thu 28 Mar 2024 03:06:27 PM UTC: 
+ list.c | 2 ++
+ 1 file changed, 2 insertions(+)
+In file included from test.c:5:
+list.c: In function ‘prevList’:
+list.c:57:47: error: expected ‘;’ before ‘)’ token
+   57 |   if (list->current == list->head) return NULL);
+      |                                               ^
+list.c:57:3: error: this ‘if’ clause does not guard... [-Werror=misleading-indentation]
+   57 |   if (list->current == list->head) return NULL);
+      |   ^~
+list.c:57:47: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘if’
+   57 |   if (list->current == list->head) return NULL);
+      |                                               ^
+list.c:57:47: error: expected statement before ‘)’ token
+cc1: all warnings being treated as errors
+Compilation failed
+51efda6
