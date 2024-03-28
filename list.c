@@ -92,12 +92,16 @@ void * popBack(List * list) {
 }
 
 void * popCurrent(List * list) {
-  //int* dato = list->current->data;
+  int* dato = list->current->data;
+  
   Node * prevNode = list->current->prev;
   Node * nextNode = list->current->next;
+  
   free(list->current);
   prevNode->next = nextNode;
   nextNode->prev = prevNode;
+  
+  return dato;
 }
 
 void cleanList(List * list) {
