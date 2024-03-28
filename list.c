@@ -49,12 +49,12 @@ void * nextList(List * list) {
 
 void * lastList(List * list) {
   list->current = list->tail;
-  return list->current;
+  return list->current->data;
 }
 
 void * prevList(List * list) {
   list->current = list->current->prev;
-  return list->current;
+  return list->current->data;
 }
 
 void pushFront(List * list, void * data) {
@@ -87,8 +87,8 @@ void * popFront(List * list) {
 }
 
 void * popBack(List * list) {
-    list->current = list->tail;
-    return popCurrent(list);
+  list->current = list->tail;
+  return popCurrent(list);
 }
 
 void * popCurrent(List * list) {
