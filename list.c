@@ -39,7 +39,7 @@ List * createList() {
 
 void * firstList(List * list) {
   list->current = list->head;  
-  return list->head;
+  return list->current;
 }
 
 void * nextList(List * list) {
@@ -78,6 +78,7 @@ void pushCurrent(List * list, void * data) {
   Node * newNode = createNode(data);
   list->current->next = newNode;
   newNode->prev = list->current;
+  list->tail = newNode;
 }
 
 void * popFront(List * list) {
