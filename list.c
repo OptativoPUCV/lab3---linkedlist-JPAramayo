@@ -44,8 +44,10 @@ void * firstList(List * list) {
 }
 
 void * nextList(List * list) {
-  if (list->current == list->tail)
+  if (list->current == list->tail || list->current == NULL)
     return NULL;
+
+  
   list->current = list->current->next;
   return list->current->data;
 }
@@ -57,8 +59,7 @@ void * lastList(List * list) {
 }
 
 void * prevList(List * list) {
-  if (list->current == list->head)
-    return NULL;
+  if (list->current == list->head  || list->current == NULL) return NULL;
   list->current = list->current->prev;
   return list->current->data;
 }
